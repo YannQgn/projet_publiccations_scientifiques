@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DBLP Publications</title>
+</head>
+
+<body>
+    <h1>DBLP Publications</h1>
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Authors</th>
+            <!-- Ajoutez plus de colonnes selon vos besoins -->
+        </tr>
+        {% for pub in publications %}
+        <tr>
+            <td>{{ pub.title }}</td>
+            <td>{{ pub.authors | join(', ') }}</td>
+            <!-- Ajoutez plus de colonnes selon vos besoins -->
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>
