@@ -9,10 +9,11 @@ WORKDIR /app
 
 # Copiez les fichiers requis dans le conteneur
 COPY app.py /app/
+COPY data.py /app/
 COPY templates /app/templates/
 
 # Installez les dépendances
-RUN pip install --no-cache-dir Flask pymongo
+RUN pip install --no-cache-dir Flask pymongo flask_paginate
 
 # Exposez le port
 EXPOSE 5000
