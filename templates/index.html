@@ -11,13 +11,13 @@
         <tr>
             <th>Title</th>
             <th>Authors</th>
-            <!-- Ajoutez plus de colonnes selon vos besoins -->
+            <th>Year</th>
         </tr>
         {% for pub in publications %}
         <tr>
-            <td>{{ pub.title }}</td>
-            <td>{{ pub.authors | join(', ') }}</td>
-            <!-- Ajoutez plus de colonnes selon vos besoins -->
+            <td>{{ pub['title'] }}</td>
+            <td>{{ pub['authors'] }}</td>
+            <td>{{ pub['year'] }}</td>
         </tr>
         {% endfor %}
     </table>

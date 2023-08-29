@@ -17,5 +17,4 @@ RUN pip install --no-cache-dir Flask pymongo
 # Exposez le port
 EXPOSE 5000
 
-# Commande à exécuter au démarrage du conteneur
-CMD ["python", "app.py"]
+CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]

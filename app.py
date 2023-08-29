@@ -1,8 +1,10 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template
 from pymongo import MongoClient
 
 app = Flask(__name__)
-client = MongoClient('mongodb://root:example@localhost:27017/')
+
+# MongoDB connection setup
+client = MongoClient('mongodb://root:example@mongodb:27017/')
 db = client['DBLP']
 collection = db['publis']
 
@@ -11,7 +13,5 @@ def index():
     publications = collection.find()
     return render_template('index.html', publications=publications)
 
-# Ajoutez d'autres routes pour les filtres, détails de publication, etc.
-
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000)
